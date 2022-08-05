@@ -1,0 +1,11 @@
+.cards{
+    display: grid;
+    grid-template-rows: auto;
+    border: 5px solid black;
+}
+
+.grid-items{
+    border: 2px solid blue;
+    display: grid;
+    height: 50px;
+}
