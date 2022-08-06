@@ -8,10 +8,17 @@
     <title>Memory Game</title>
 </head>
 <body>
+   
+
+
     <div class="start">
-        <button>Start</button>
+        <button onClick="myTimer = setInterval(myCounter, 1000)">Start</button>
+        
         <button>Reset</button>
     </div>
+
+    
+
     <div class ='cards'>
         <div class="grid-items">1</div>
         <div class="grid-items">2</div>
@@ -26,8 +33,8 @@
         <div class="grid-items">11</div>
         <div class="grid-items">12</div>
     </div>
-    <div class="timer">Time:0 sec</div>
-
+   
+    <div id= "timer">Time:</div>
     
     <script src="script.js"></script>
     <!-- cards, start/reset button, timer, title

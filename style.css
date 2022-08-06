@@ -1,11 +1,13 @@
 .cards{
     display: grid;
-    grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    
     border: 5px solid black;
 }
 
 .grid-items{
     border: 2px solid blue;
     display: grid;
-    height: 50px;
+    height: 150px;
 }
+
