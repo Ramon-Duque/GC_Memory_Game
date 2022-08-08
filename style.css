@@ -51,3 +51,9 @@ body{
     transform: rotateY(180deg);
 }
 
+.card img {
+  width: 80%;
+  max-height: 90px;
+  transition: 0.3 all ease;
+}
+
