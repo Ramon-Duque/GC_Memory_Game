@@ -1,13 +1,53 @@
-.cards{
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.card-container{
     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    
-    border: 5px solid black;
+    place-items: center;
+    grid-template-columns: repeat(4,1fr);
+    position: relative;
+    min-height: 100vh;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+
+.card{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
 }
 
 .grid-items{
     border: 2px solid blue;
     display: grid;
     height: 150px;
+}
+
+.front{
+    position: absolute;
+    width:110px;
+    height:90px;
+    backface-visibility: hidden;
+    background: lightblue;
+    color: #000;
+    text-align: center;
+}
+
+.back{
+    position: absolute;
+    width: 110px;
+    height: 90px;
+    backface-visibility: hidden;
+    background-color: lightcoral;
+    color: white;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.flipCard{
+    transform: rotateY(180deg);
 }
 
