@@ -16,35 +16,70 @@ const cardImages = [
   {"src": "./images/colosseum.jpeg"},
 ]
 
-function App() {
+// function App() {
 
-  const [cards, setCards] = useState([])
-  const [turns, setTurns] = useState(0)
+//   const [cards, setCards] = useState([])
+//   const [turns, setTurns] = useState(0)
 
-  // shuffle cards
-const shuffleCards =()=>{
-  const shuffleCards = [...cardImages, ...cardImages]
-   .sort(( )=> Math.random() - 0.5)
-   .map((card) => ({ ...card, id: Math.random() }))
+//   // shuffle cards
+// const shuffleCards =()=>{
+//   const shuffleCards = [...cardImages, ...cardImages]
+//    .sort(( )=> Math.random() - 0.5)
+//    .map((card) => ({ ...card, id: Math.random() }))
 
-   setCards(shuffleCards)
-   setTurns(0)
-}
-console.log(cards, turns);
+//    setCards(shuffleCards)
+//    setTurns(0)
+// }
+// console.log(cards, turns);
 
-  return(
-    <div className="App">
-      <h1>Memory Card Game</h1>
-      <button onClick={shuffleCards}>New Game</button>
-    </div>
-  );
-};
+//   return(
+//     <div className="App">
+//       <h1>Memory Card Game</h1>
+//       <button onClick={shuffleCards}>New Game</button>
+//     </div>
+//   );
+// };
 
 //Function to Flip Cards
-const card = document.getElementById("card-container")
-card.addEventListener("click", flipCard);
+// let counter = 0;
+// let firstSelection = "";
+// let secondSelection = "";
+// const cards = document.querySelectorAll(".card-container .card");
+//    card-container.forEach((card)=>
+//      card.addEventListener("click", () => {
+//      card.classList.add("clicked");
 
-function flipCard(){
-    card.classList.toggle('flipCard');
-}
+//     if (counter === 0 ) {
+//      firstSelection = card.getAttribute("monument");
+//      counter++
+//      } else {
+//       secondSelection = card.getAttribute("monument");
+//       counter = 0;
+//      }
+//    });
+//   });
+
+let counter = 0;
+let firstSelection = "";
+let secondSelection = "";
+
+const cards = document.querySelectorAll(".cards .card");
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.add("clicked");
+    
+
+    if (counter === 0) {
+      firstSelection = card.getAttribute("monument");
+      counter++;
+    } else {
+      secondSelection = card.getAttribute("monument");
+      counter = 0;
+    }
+  });
+});
+
+
+
+
 
