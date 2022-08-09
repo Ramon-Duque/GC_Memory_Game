@@ -4,6 +4,7 @@ function myCounter() {
   document.getElementById("timer").innerHTML = ++count;
 }
 
+
 // randomizer array for cards, with img sources for whatever pics we want to use
 
 const cardImages = [
@@ -38,3 +39,12 @@ console.log(cards, turns);
     </div>
   );
 };
+
+//Function to Flip Cards
+const card = document.getElementById("card-container")
+card.addEventListener("click", flipCard);
+
+function flipCard(){
+    card.classList.toggle('flipCard');
+}
+
