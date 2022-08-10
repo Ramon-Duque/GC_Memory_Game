@@ -41,23 +41,7 @@ const cardImages = [
 // };
 
 //Function to Flip Cards
-// let counter = 0;
-// let firstSelection = "";
-// let secondSelection = "";
-// const cards = document.querySelectorAll(".card-container .card");
-//    card-container.forEach((card)=>
-//      card.addEventListener("click", () => {
-//      card.classList.add("clicked");
 
-//     if (counter === 0 ) {
-//      firstSelection = card.getAttribute("monument");
-//      counter++
-//      } else {
-//       secondSelection = card.getAttribute("monument");
-//       counter = 0;
-//      }
-//    });
-//   });
 
 let counter = 0;
 let firstSelection = "";
