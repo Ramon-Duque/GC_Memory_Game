@@ -88,6 +88,7 @@ cards.forEach((card) => {
       matchedCards[0].classList.remove('clicked');
       matchedCards[1].classList.add('matched');
       matchedCards[1].classList.remove('clicked');
+
     }else{
       const noMatch = document.querySelectorAll('.card.clicked');
 
@@ -98,6 +99,13 @@ cards.forEach((card) => {
     }
   });
 });
+
+$("#reset").unbind("click", cards);
+
+
+
+
+
 
 
 
