@@ -81,7 +81,7 @@ cards.forEach((card) => {
     }
 
     if (firstSelection === secondSelection){
-<<<<<<< HEAD
+
       const matchedCards = document.querySelectorAll(".clicked");
       setTimeout(() =>{
           for(let card of matchedCards){
@@ -89,8 +89,7 @@ cards.forEach((card) => {
         }
       }, 2000);
     } else{
-=======
-      const matchedCards = document.querySelectorAll(
+          const matchedCards = document.querySelectorAll(
         ".card[monument= ' + firstSelection + ' ]"
       );
       matchedCards[0].classList.add('matched');
@@ -99,7 +98,7 @@ cards.forEach((card) => {
       matchedCards[1].classList.remove('clicked');
 
     }else{
->>>>>>> 5b1bf0d48242453008a665d4454f5053f9b8d68a
+      
       const noMatch = document.querySelectorAll('.card.clicked');
 
       setTimeout(() => {
