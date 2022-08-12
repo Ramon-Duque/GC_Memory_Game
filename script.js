@@ -10,57 +10,85 @@ function myCounter() {
 
 // randomizer array for cards, with img sources for whatever pics we want to use
 
-const cardImages = [
-  {"src": "./images/tajmahal.jpeg"},
-  {"src": "./images/giza.jpeg"},
-  {"src": "./images/statue_of_liberty.jpeg"},
-  {"src": "./images/arcdetriomphe.jpeg"},
-  {"src": "./images/rushmore.jpeg"},
-  {"src": "./images/colosseum.jpeg"},
+const cardArray = [
+ {
+  name: 'arcdetriophme',
+  img: 'images/arcdetriomphe.jpeg',
+ },
+ {
+  name: 'colosseum',
+  img: 'images/colosseum.jpeg',
+ },
+ {
+  name: 'giza',
+  img: 'images/giza.jpeg',
+ },
+ {
+  name: 'rushmore',
+  img: 'images/rushmore.jpeg',
+ },
+ {
+  name: 'statueofliberty',
+  img: 'images/statue_of_liberty.jpeg',
+ },
+  {
+  name: 'tajmahal',
+  img: 'images/tajmahal.jpeg',
+  }
 ]
 
-// function App() {
+const memoryGame = document.getElementById('card-container')
 
-//   const [cards, setCards] = useState([])
-//   const [turns, setTurns] = useState(0)
 
-//   // shuffle cards
-// const shuffleCards =()=>{
-//   const shuffleCards = [...cardImages, ...cardImages]
-//    .sort(( )=> Math.random() - 0.5)
-//    .map((card) => ({ ...card, id: Math.random() }))
+const grid = document.createElement('section')
+grid.setAttribute('class', 'grid')
 
-//    setCards(shuffleCards)
-//    setTurns(0)
-// }
-// console.log(cards, turns);
 
-//   return(
-//     <div className="App">
-//       <h1>Memory Card Game</h1>
-//       <button onClick={shuffleCards}>New Game</button>
-//     </div>
-//   );
-// };
+memoryGame.appendChild(grid)
 
-//Function to Flip Cards
-// let counter = 0;
-// let firstSelection = "";
-// let secondSelection = "";
-// const cards = document.querySelectorAll(".card-container .card");
-//    card-container.forEach((card)=>
-//      card.addEventListener("click", () => {
-//      card.classList.add("clicked");
+let memoryGameGrid = cardArray.concat(cardArray)
+memoryGameGrid.sort(() => 0.5 - Math.random());
 
-//     if (counter === 0 ) {
-//      firstSelection = card.getAttribute("monument");
-//      counter++
-//      } else {
-//       secondSelection = card.getAttribute("monument");
-//       counter = 0;
-//      }
-//    });
-//   });
+memoryGameGrid.forEach((item) => {
+ 
+  const card = document.createElement('div')
+
+  
+  card.classList.add('card')
+
+  
+  card.dataset.name = item.name
+
+  
+  card.style.backgroundImage = `url('${item.img}')`
+
+  
+  grid.appendChild(card)
+});
+
+memoryGameGrid.forEach((item) => {
+ 
+  const card = document.createElement('div')
+  card.classList.add('card')
+  card.dataset.name = item.name
+
+  
+  const front = document.createElement('div')
+  front.classList.add('front')
+
+  
+  const back = document.createElement('div')
+  back.classList.add('back')
+  back.style.backgroundImage = `url(${item.img})`
+
+  
+  grid.appendChild(card)
+  card.appendChild(front)
+  card.appendChild(back)
+})
+
+
+
 
 let counter = 0;
 let firstSelection = "";
@@ -81,7 +109,6 @@ cards.forEach((card) => {
     }
 
     if (firstSelection === secondSelection){
-<<<<<<< HEAD
       const matchedCards = document.querySelectorAll(".clicked");
       setTimeout(() =>{
           for(let card of matchedCards){
@@ -89,17 +116,6 @@ cards.forEach((card) => {
         }
       }, 2000);
     } else{
-=======
-      const matchedCards = document.querySelectorAll(
-        ".card[monument= ' + firstSelection + ' ]"
-      );
-      matchedCards[0].classList.add('matched');
-      matchedCards[0].classList.remove('clicked');
-      matchedCards[1].classList.add('matched');
-      matchedCards[1].classList.remove('clicked');
-
-    }else{
->>>>>>> 5b1bf0d48242453008a665d4454f5053f9b8d68a
       const noMatch = document.querySelectorAll('.card.clicked');
 
       setTimeout(() => {
