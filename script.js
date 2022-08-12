@@ -109,6 +109,10 @@ cards.forEach((card) => {
     }
 
     if (firstSelection === secondSelection){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3d05fe6c924ccb76a0e563e9775112971e0acca6
       const matchedCards = document.querySelectorAll(".clicked");
       setTimeout(() =>{
           for(let card of matchedCards){
@@ -116,6 +120,7 @@ cards.forEach((card) => {
         }
       }, 2000);
     } else{
+<<<<<<< HEAD
       const noMatch = document.querySelectorAll('.card.clicked');
 
       setTimeout(() => {
@@ -125,8 +130,28 @@ cards.forEach((card) => {
     }
   });
 });
+=======
+          const matchedCards = document.querySelectorAll(
+        ".card[monument= ' + firstSelection + ' ]"
+      );
+      matchedCards[0].classList.add('matched');
+      matchedCards[0].classList.remove('clicked');
+      matchedCards[1].classList.add('matched');
+      matchedCards[1].classList.remove('clicked');
 
-$("#reset").unbind("click", cards);
+  
+    }else{
+            const noMatch = document.querySelectorAll('.card.clicked');
+            setTimeout(() => {
+              noMatch[0].classList.remove('clicked');
+              noMatch[1].classList.remove('clicked');
+            },4000);
+          }
+        });
+      });
+      $("#reset").unbind("click", cards);
+>>>>>>> 3d05fe6c924ccb76a0e563e9775112971e0acca6
+
 
 
 
