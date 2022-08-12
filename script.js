@@ -97,19 +97,18 @@ cards.forEach((card) => {
       matchedCards[1].classList.add('matched');
       matchedCards[1].classList.remove('clicked');
 
+  
     }else{
-      
-      const noMatch = document.querySelectorAll('.card.clicked');
+            const noMatch = document.querySelectorAll('.card.clicked');
+            setTimeout(() => {
+              noMatch[0].classList.remove('clicked');
+              noMatch[1].classList.remove('clicked');
+            },4000);
+          }
+        });
+      });
+      $("#reset").unbind("click", cards);
 
-      setTimeout(() => {
-        noMatch[0].classList.remove('clicked');
-        noMatch[1].classList.remove('clicked');
-      },4000);
-    }
-  });
-});
-
-$("#reset").unbind("click", cards);
 
 
 
