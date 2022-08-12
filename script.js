@@ -81,20 +81,19 @@ cards.forEach((card) => {
     }
 
     if (firstSelection === secondSelection){
-      const matchedCards = document.querySelectorAll(
-        ".card[monument= ' + firstSelection + ' ]"
-      );
-      matchedCards[0].classList.add('matched');
-      matchedCards[0].classList.remove('clicked');
-      matchedCards[1].classList.add('matched');
-      matchedCards[1].classList.remove('clicked');
-    }else{
+      const matchedCards = document.querySelectorAll(".clicked");
+      setTimeout(() =>{
+          for(let card of matchedCards){
+          card.remove();
+        }
+      }, 2000);
+    } else{
       const noMatch = document.querySelectorAll('.card.clicked');
 
       setTimeout(() => {
         noMatch[0].classList.remove('clicked');
         noMatch[1].classList.remove('clicked');
-      },1000);
+      },4000);
     }
   });
 });

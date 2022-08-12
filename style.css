@@ -36,9 +36,9 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 150px;
-  background: linear-gradient(325deg, #00fa9a 100% ,#0D98BA 50%, #00bfff 0%);
+  height: 110px;
+  width: 90px;
+  background: linear-gradient(325deg, #00fa9a 100% ,#358396 50%, #00bfff 0%);
   border-radius: 15px;
   border:black 2px solid;
 }
@@ -104,5 +104,4 @@ justify-content: center;
   display:flex;
   justify-content: center;
   font-size:18px;
- 
 }
